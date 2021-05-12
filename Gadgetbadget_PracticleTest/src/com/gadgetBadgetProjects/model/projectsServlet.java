@@ -45,7 +45,9 @@ public class projectsServlet {
 			preparedStatement.execute();
 			con.close();
 			
-			output = "Inserted Successfully";
+			 
+			 String newProject = readProjects(); 
+			 output = "{\"status\":\"success\", \"data\": \"" + newProject + "\"}"; 
 
 		}catch(Exception e){
 			output ="Error while inserting to DB";
@@ -67,7 +69,8 @@ public class projectsServlet {
 				return "Error while connecting";
 			}
 			
-			output = "<table border='1'><tr><th>Name</th><th>Description</th>" +
+			output = "<table border='1'><tr><th>ID</th><th>Description</th>" +
+					 "<th>Name</th>" + 
 					 "<th>Required Fund</th>" + 
 					 "<th> Duration</th>" +
 					 "<th>Update</th><th>Remove</th></tr>";  
@@ -85,7 +88,8 @@ public class projectsServlet {
 				//String requiredfund = Double.toString(rs.getDouble("requiredfund"));
 				String projectduration = rs.getString("projectduration");
 				
-				output += "<tr><td>" + projectname + "</td>"; 
+				output += "<tr><td>" + id + "</td>"; 
+				output += "<td>" + projectname + "</td>"; 
 				output += "<td>" + projectdescription + "</td>"; 
 				output += "<td>" + requiredfund + "</td>"; 
 				output += "<td>" + projectduration + "</td>"; 
@@ -138,7 +142,7 @@ public class projectsServlet {
 			preparedStatement.execute();
 			con.close();
 			
-			output="Updated successfully";
+			 String newProject = readProjects(); output = "{\"status\":\"success\", \"data\": \"" + newProject + "\"}"; 
 			
 		}catch(Exception e){
 			output ="Error while updating projects";
@@ -168,11 +172,12 @@ public class projectsServlet {
 			preparedStatement.execute();
 			con.close();
 			
-			output="Project Deleted successfully";
+			 String newProject = readProjects(); output = "{\"status\":\"success\", \"data\": \"" + newProject + "\"}";
 			
 		}catch(Exception e){
-			output="Error while deleting the project";
+			 output = "{\"status\":\"error\", \"data\": \"Error while deleting ....\"}"; 
 			System.err.println(e.getMessage());
+			System.out.println("+++++++++++++++++++++++++++++++++++"+e);
 		}
 		
 		return output;

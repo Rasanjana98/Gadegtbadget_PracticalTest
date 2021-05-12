@@ -76,7 +76,7 @@ $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
 		url : "projectsAPI",
 		type : "DELETE",
-		data : "projectID=" + $(this).data("projectID"),
+		data : "id=" + $(this).data("id"),
 		dataType : "text",
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);
@@ -118,10 +118,11 @@ function onItemDeleteComplete(response, status) {
 $(document).on("click",".btnUpdate",function(event)
 		{
 			$("#hidProjectIDSave").val($(this).data("id"));
-			$("#projectname").val($(this).closest("tr").find('td:eq(0)').text());
-			$("#projectdescription").val($(this).closest("tr").find('td:eq(1)').text());
-			$("#requiredfund").val($(this).closest("tr").find('td:eq(2)').text());
-			$("#projectduration").val($(this).closest("tr").find('td:eq(3)').text());
+			$("#id").val($(this).closest("tr").find('td:eq(0)').text());
+			$("#projectname").val($(this).closest("tr").find('td:eq(1)').text());
+			$("#projectdescription").val($(this).closest("tr").find('td:eq(2)').text());
+			$("#requiredfund").val($(this).closest("tr").find('td:eq(3)').text());
+			$("#projectduration").val($(this).closest("tr").find('td:eq(4)').text());
 				
 		});
 

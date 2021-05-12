@@ -3,6 +3,7 @@ package com.gadgetBadgetProjects.model;
 import java.io.IOException;
 
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,21 +44,22 @@ public class projectsAPI extends HttpServlet {
 		response.getWriter().write(outputString);
 	}	
 
-//	protected void doPut(HttpServletRequest request,HttpServletResponse response)
-//			throws javax.servlet.ServletException, IOException {
-//		
-//		Map paras = getParasMap(request);
-//
-//		String outputString = projectObj.updateProjects(
-//				paras.get("projectname").toString(),
-//				paras.get("projectdescription").toString(),
-//				paras.get("requiredfund").toString(), 
-//				paras.get("projectduration").toString());
-//				 
-//
-//		response.getWriter().write(outputString);
-//	}
-//	
+	protected void doPut(HttpServletRequest request,HttpServletResponse response)
+			throws javax.servlet.ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+
+		String outputString = projectObj.updateProjects(
+				paras.get("id").toString(),
+				paras.get("projectname").toString(),
+				paras.get("projectdescription").toString(),
+				paras.get("requiredfund").toString(), 
+				paras.get("projectduration").toString());
+				 
+
+		response.getWriter().write(outputString);
+	}
+	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

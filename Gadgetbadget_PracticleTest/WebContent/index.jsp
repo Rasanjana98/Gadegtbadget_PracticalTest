@@ -30,6 +30,11 @@
 	
 				<legend><b>Add Investment Details</b></legend>
 					<form id="PROJECT" name="PROJECT" class="border border-light p-5">
+					
+					<div class="form-outline mb-4">
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Project Name:</label>
+						    <input type="text" id="id" class="form-control" name="id">						    
+						</div>
 						
 						<div class="form-outline mb-4">
 						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Project Name:</label>
@@ -69,8 +74,8 @@
 					<legend><b>View Project Details</b></legend>
 					<form method="post" action="projects.jsp" class="table table-striped">
 						<%
-							projectsServlet viewInvestment = new projectsServlet();
-											out.print(viewInvestment.readProjects());
+							projectsServlet viewProjects = new projectsServlet();
+											out.print(viewProjects.readProjects());
 						%>
 					</form>
 					<br>

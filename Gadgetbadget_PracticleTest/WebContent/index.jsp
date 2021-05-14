@@ -28,13 +28,9 @@
 			
 			<fieldset>
 	
-				<legend><b>Add Investment Details</b></legend>
+				<legend><b>Add Project Details</b></legend>
 					<form id="PROJECT" name="PROJECT" class="border border-light p-5">
-					
-					<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Project Name:</label>
-						    <input type="text" id="id" class="form-control" name="id">						    
-						</div>
+				
 						
 						<div class="form-outline mb-4">
 						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Project Name:</label>

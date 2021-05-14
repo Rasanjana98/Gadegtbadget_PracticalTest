@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-			<title>Investment Management - GadgetBadget</title>
+			<title>Project Management - GadgetBadget</title>
 	
 		<link href="myStyle.css" rel="stylesheet" />
 		<link rel="stylesheet" href="Views/bootstrap.min.css">
